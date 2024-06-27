@@ -1,0 +1,41 @@
+.TH _PRINTF 	-_printf\-0.1
+.SH NAME
+_printf \-prints datatype char c, %, s; and int d ,i. Errors out and ends if NULL.
+.SP
+.SH LIBRARY
+
+.SH SYNOPSIS
+.B _PRINTF
+.B _printf
+.RB [ \c
+.IR char ]
+.RB [ \%
+.IR modulus ]
+.RB [ \s
+.IR string ]
+.RB [ \d
+.IR decimal integer ]
+.RB [ \i
+.IR integer]
+.IP
+.BR _printf "prints conversion specifiers c, s, %, d, and i. If input is not of these conversion specifiers, will return error. If successfull will return the number of characters printed."
+.SP
+.SH DESCRIPTION
+.B _printf
+takes a variable input and checks through iteration if the variable is of c, s, %, d, or i to print the conversion specifier. If input is equal to NULL or \0 it will result and return in an error. If successful the input will be printed along with a new line.
+.SH EXAMPLES
+.SP
+.EX
+.EE
+.SH RETURN VALUE
+.SP
+.SH BUGS
+.SP
+.SH SEE ALSO
+.SP
+.SH AUTHORS
+.IB Nash Thames
+.IB Ariel Lopez alexandrea.lopez@gmail.com
+.SP
+.SH COPYRIGHT
+
