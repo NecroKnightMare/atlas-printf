@@ -15,10 +15,10 @@
 int (*get_spec(const char *spec))(va_list)
 {
 	spec label[] = {
-		{"d", print_dec},
-		{"c", print_char},
-		{"s", print_string},
-		{"i", print_int},
+		{"d", print_d},
+		{"c", print_c},
+		{"s", print_s},
+		{"i", print_i},
 		{"%", print_per},
 		{NULL, NULL}
 	};
