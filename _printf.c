@@ -55,33 +55,33 @@ int _printf(const char *format, ...)
         
         if (count[0] != '%')
 {
-          _printf(stdout, count);
+          _putchar(stdout, count);
           while (*format == '%')
 {
             count++;
             if (*format == 'c')
 {
               char c = va_arg(args, int);
-              _printf("Character: %c", c);
+              _putchar("Character: %c", c);
 }
               else if (*format == 's')
 {
                 char *s = va_arg(args, char*);
-                _printf("String: %s\n", s);
+                _putchar("String: %s\n", s);
 }
               else if (*format == 'd')
 {
                 int d = va_arg(args, int);
-                _printf("Decimal Integer: %d", d);
-}                _printf("Integer: %i", i);
-
+                _putchar("Decimal Integer: %d", d);
+}
               else if (*format == 'i')
 {
                 int i = va_arg(args, int);
+		_putchar("Integer: %i", i);
 }
             else
 {
-              _printf(*format);
+              _putchar(*format);
 }
         count++;
 }
