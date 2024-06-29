@@ -9,6 +9,8 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+int print_s(va_list args);
+int print_c(va_list args);
 
 typedef struct format
 {
