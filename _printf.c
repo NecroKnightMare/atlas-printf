@@ -40,3 +40,52 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+int _printf(const char *format, ...)
+{
+        int i = 0;
+        int *count = format;
+        va_list args, args_copy;
+        va_start(args, format);
+        va_copy(args_copy, args);
+        
+        if (count[0] != '%')
+{
+          _printf(stdout, count);
+          while (*format == '%')
+{
+            count++;
+            if (*format == 'c')
+{
+              char c = va_arg(args, int);
+              _printf("Character: %c", c);
+}
+              else if (*format == 's')
+{
+                char *s = va_arg(args, char*);
+                _printf("String: %s\n", s);
+}
+              else if (*format == 'd')
+{
+                int d = va_arg(args, int);
+                _printf("Decimal Integer: %d", d);
+}                _printf("Integer: %i", i);
+
+              else if (*format == 'i')
+{
+                int i = va_arg(args, int);
+}
+            else
+{
+              _printf(*format);
+}
+        count++;
+}
+        va_end(args);
+        va_end(args_copy);
+}
+}
