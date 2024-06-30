@@ -24,8 +24,6 @@ int _printf(const char *format, ...)
                 return (-1); /* return error */
         }
 
-        *iterator = format; /* set iterator to format string */
-
         while (*iterator!= '\0') /* loop through format string */
         {
                 if (*iterator == '%') /* check for format specifier */
