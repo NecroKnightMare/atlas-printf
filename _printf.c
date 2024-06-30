@@ -76,10 +76,10 @@ int _printf(const char *format, ...)
                                 }
 
                                 str_num[index] = '\0'; /* add null terminator */
-                                int i;
-                                for (i = 0; str_num[i]; i++) /* loop through string */
+                                int k; /* counter */
+                                for (k = 0; str_num[k]; k++) /* loop through string */
                                 {
-                                        _putchar(str_num[i]); /* print character */
+                                        _putchar(str_num[k]); /* print character */
                                         count++; /* increment character counter */
                                 }
 
