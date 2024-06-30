@@ -1,6 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define WRITE
 
 #include <stdarg.h>
 #include <stdio.h>
