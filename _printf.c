@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 {
         va_list args; /* holds variable args*/
         va_start(args, format); /* initialize va_list */
-        char *iterator = format; /* pointer to format string */
+        const char *iterator = format; /* pointer to format string */
         int count = 0; /* printed character counter */
 
         if (!format) /* check for null format string */
@@ -57,6 +57,7 @@ int _printf(const char *format, ...)
                                 int num = va_arg(args, int); /* get integer */
                                 char str_num[50]; /* string to hold integer */
                                 int index = 0; /* index of string */
+                                int k; /* loop counter */
 
                                 if (num < 0) /* check for negative number */
                                 {
@@ -76,7 +77,7 @@ int _printf(const char *format, ...)
                                 }
 
                                 str_num[index] = '\0'; /* add null terminator */
-                                int k; /* counter */
+
                                 for (k = 0; str_num[k]; k++) /* loop through string */
                                 {
                                         _putchar(str_num[k]); /* print character */
