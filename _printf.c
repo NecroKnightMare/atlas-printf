@@ -4,41 +4,40 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-
 /**
  * _printf - prints string with format specifiers
  * @format: string to print
  *
  * Return: number of characters printed
  */
-int _printf(const char *format, ...) 
+int _printf(const char *format, ...)
 {
-	char iterator;
+	char *iterator;
 	int count = 0;/* printed character counter */
 
-	va_list args; /* holds variable args*/
-	va_start(args, format); /* initialize va_list */
+	va_list args;/* holds variable args*/
+	va_start(args, format);/* initialize va_list */
 
-	*iterator = format; /* pointer to format string */
+	iterator = format;/* pointer to format string */
 
-	if (!format) /* check for null format string */
+	if (!format)/* check for null format string */
 {
-		return (-1); /* return error */
+		return (-1);/* return error */
 }
 
-	while (*iterator != '\0') /* loop through format string */
+	while (*iterator != '\0')/* loop through format string */
 {
-		if (*iterator == '%') /* check for format specifier */
+		if (*iterator == '%')/* check for format specifier */
 {
-			iterator++; /* move to next character */
+			iterator++;/* move to next character */
 
-		if (*iterator == 'c') /* check for character */
+		if (*iterator == 'c')/* check for character */
 {
-			char c = (char)va_arg(args, int); /* get character */
-			_putchar(c); /* print character */
-			count++; /* increment character counter */
+			char c = (char)va_arg(args, int);/* get character */
+			_putchar(c);/* print character */
+			count++;/* increment character counter */
 }
-			else if (*iterator == 's') /* check for string */
+			else if (*iterator == 's')/* check for string */
 {
 				char *s = va_arg(args, char*); /* get string */
 				while (*s) /* loop through string */
