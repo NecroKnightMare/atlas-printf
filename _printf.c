@@ -7,62 +7,6 @@
  * Return: number of characters printed
  */
 
-int _printf(const char *format, ...)
-{
-        int i;
-        int str_count;
-        int count = 0;
-
-	va_list args;
-
-	if (*format == '\0')
-	{
-		return (-1);
-	}
-
-	va_start(args, format);
-
-	for (i = 0; format[i] != '\0'; i++)
-	{
-		if (format[i] != '%')
-		{
-			_putchar(format[i]);
-		}
-		else if (format[i + 1] == 'c')
-		{
-			_putchar(va_arg(args, int));
-			i++;
-		}
-		else if (format[i + 1] == 's')
-		{
-                        str_count = _puts(va_arg(args, char *));
-                        count += str_count;
-                        i++;
-                }
-                else if (format[i + 1] == '%')
-                {
-                        _putchar('%');
-                        i++;
-                }
-                else if (format[i + 1] == 'd')
-                {
-                        count += _putchar(va_arg(args, int));
-                        i++;
-                }
-                else if (format[i + 1] == 'i')
-                {
-                        count += _putchar(va_arg(args, int));
-                        i++;
-                }
-                else
-                {
-                        _putchar(format[i]);
-                }
-		
-	}
-	va_end(args);
-	return (count);
-}
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -106,9 +50,100 @@ int _printf(const char *format, ...)
                         {
                                 _putchar(*format);
                         }
-                        count++;
+                        format++;
                 }
         va_end(args);
         va_end(args_copy);
         }
+}
+
+#include <stdarg.h>
+#include <stdio.h>
+
+int _printf(const char *format, ...) 
+{
+    va_list args;
+    va_start(args, format);
+
+    const char *iterator = format;
+    int count = 0;
+
+    while (*iterator!= '\0') 
+    {
+        if (*iterator == '%') 
+        {
+            iterator++;
+
+            if (*iterator == 'c') 
+            {
+                char c = (char)va_arg(args, int);
+                {
+                        _putchar(c);
+                        count++;
+                }
+            } 
+            
+            else if (*iterator == 's') 
+            {
+                char *s = va_arg(args, char*);
+                while (*s) 
+                {
+                    _putchar(*s++);
+                    count++;
+                }
+            } 
+            
+            else if (*iterator == 'd' || *iterator == 'i') 
+            {
+                int num = va_arg(args, int);
+                char str_num[50];
+                int index = 0;
+
+                if (num < 0) 
+                {
+                    str_num[index++] = '-';
+                    num = -num;
+                }
+
+                while (num > 0) 
+                {
+                    str_num[index++] = '0' + (num % 10);
+                    num /= 10;
+                }
+
+                if (index == 0) 
+                {
+                    str_num[index++] = '0';
+                }
+
+                str_num[index] = '\0';
+
+                for (; *str_num; *str_num++) 
+                {
+                    _putchar(*str_num);
+                    count++;
+                }
+
+            } 
+            
+            else 
+            {
+                _putchar('%');
+                _putchar(*iterator);
+                count += 2;
+            }
+
+        } 
+        
+        else 
+        {
+            _putchar(*iterator);
+            count++;
+        }
+
+        iterator++;
+    }
+
+    va_end(args);
+    return (count);
 }
