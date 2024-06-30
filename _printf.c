@@ -62,88 +62,88 @@ int _printf(const char *format, ...)
 
 int _printf(const char *format, ...) 
 {
-    va_list args;
-    va_start(args, format);
+    va_list args; /* holds variabe args*/
+    va_start(args, format); /* initialize va_list */
 
-    const char *iterator = format;
-    int count = 0;
+    const char *iterator = format; /* pointer to format string */
+    int count = 0; /* printed character counter */
 
-    while (*iterator!= '\0') 
+    while (*iterator!= '\0') /* loop through format string */
     {
-        if (*iterator == '%') 
+        if (*iterator == '%') /* check for format specifier */
         {
-            iterator++;
+            iterator++; /* move to next character */
 
-            if (*iterator == 'c') 
+            if (*iterator == 'c') /* check for character */
             {
-                char c = (char)va_arg(args, int);
+                char c = (char)va_arg(args, int); /* get character */
                 {
-                        _putchar(c);
-                        count++;
+                        _putchar(c); /* print character */
+                        count++; /* increment character counter */
                 }
             } 
             
-            else if (*iterator == 's') 
+            else if (*iterator == 's') /* check for string */
             {
-                char *s = va_arg(args, char*);
-                while (*s) 
+                char *s = va_arg(args, char*); /* get string */
+                while (*s) /* loop through string */
                 {
-                    _putchar(*s++);
-                    count++;
+                    _putchar(*s++); /* print character */
+                    count++; /* increment character counter */
                 }
             } 
             
-            else if (*iterator == 'd' || *iterator == 'i') 
+            else if (*iterator == 'd' || *iterator == 'i') /* check for integer */
             {
-                int num = va_arg(args, int);
-                char str_num[50];
-                int index = 0;
+                int num = va_arg(args, int); /* get integer */
+                char str_num[50]; /* string to hold integer */
+                int index = 0; /* index of string */
 
-                if (num < 0) 
+                if (num < 0) /* check for negative number */
                 {
-                    str_num[index++] = '-';
-                    num = -num;
+                    str_num[index++] = '-'; /* add negative sign */
+                    num = -num; /* make number positive */
                 }
 
-                while (num > 0) 
+                while (num > 0) /* loop through number */
                 {
-                    str_num[index++] = '0' + (num % 10);
-                    num /= 10;
+                    str_num[index++] = '0' + (num % 10); /* add digit to string */
+                    num /= 10; /* move to next digit */
                 }
 
-                if (index == 0) 
+                if (index == 0) /* check for zero */
                 {
-                    str_num[index++] = '0';
+                    str_num[index++] = '0'; /* add zero to string */
                 }
 
-                str_num[index] = '\0';
+                str_num[index] = '\0'; /* add null terminator */
 
-                for (; *str_num; *str_num++) 
+                for (; *str_num; *str_num++) /* loop through string */
                 {
-                    _putchar(*str_num);
-                    count++;
+                    _putchar(*str_num); /* print character */
+                    count++; /* increment character counter */
                 }
 
             } 
             
             else 
             {
-                _putchar('%');
-                _putchar(*iterator);
-                count += 2;
+                _putchar('%'); /* print % */
+                _putchar(*iterator); /* print character */
+                count += 2; /* increment character counter */
             }
 
         } 
         
-        else 
+        else /* if not format specifier */
         {
-            _putchar(*iterator);
-            count++;
+            _putchar(*iterator); /* just print it */
+            count++; /* increment character counter */
         }
 
-        iterator++;
+        iterator++; /* move to next character */
     }
 
-    va_end(args);
-    return (count);
+    va_end(args); /* clean up list */
+    return (count); /* return count */
 }
