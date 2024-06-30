@@ -1,4 +1,9 @@
 #include "main.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
 
 /**
  * _printf - prints string with format specifiers
@@ -7,62 +12,9 @@
  * Return: number of characters printed
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdarg.h>
-
-int _printf(const char *format, ...)
-{
-        int i = 0;
-        int *count = format;
-        va_list args, args_copy;
-        va_start(args, format);
-        va_copy(args_copy, args);
-        
-        if (count[0] != '%')
-        {
-                _putchar(stdout, count);
-                while (*format == '%')
-                {
-                        count++;
-                        if (*format == 'c')
-                        {
-                                char c = va_arg(args, int);
-                                _putchar("Character: %c", c);
-                        }
-                        else if (*format == 's')
-                        {
-                                char *s = va_arg(args, char*);
-                                _putchar("String: %s\n", s);
-                        }
-                        else if (*format == 'd')
-                        {
-                                int d = va_arg(args, int);
-                                _putchar("Decimal Integer: %d", d);
-                        }
-                        else if (*format == 'i')
-                        {
-                                int i = va_arg(args, int);
-	                	_putchar("Integer: %i", i);
-                        }
-                        else
-                        {
-                                _putchar(*format);
-                        }
-                        format++;
-                }
-        va_end(args);
-        va_end(args_copy);
-        }
-}
-
-#include <stdarg.h>
-#include <stdio.h>
-
 int _printf(const char *format, ...) 
 {
-    va_list args; /* holds variabe args*/
+    va_list args; /* holds variable args*/
     va_start(args, format); /* initialize va_list */
 
     const char *iterator = format; /* pointer to format string */
