@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 {
         va_list args; /* holds variable args*/
         va_start(args, format); /* initialize va_list */
-        const char *iterator = format; /* pointer to format string */
+        *iterator = format; /* pointer to format string */
         int count = 0; /* printed character counter */
 
         if (!format) /* check for null format string */
