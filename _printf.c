@@ -9,9 +9,9 @@
 
 int _printf(const char *format, ...)
 {
-	int i;
-    int str_count;
-    int count = 0;
+        int i;
+        int str_count;
+        int count = 0;
 
 	va_list args;
 
@@ -35,6 +35,29 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 's')
 		{
+                        str_count = _puts(va_arg(args, char *));
+                        count += str_count;
+                        i++;
+                }
+                else if (format[i + 1] == '%')
+                {
+                        _putchar('%');
+                        i++;
+                }
+                else if (format[i + 1] == 'd')
+                {
+                        count += _puts(va_arg(args, int));
+                        i++;
+                }
+                else if (format[i + 1] == 'i')
+                {
+                        count += _puts(va_arg(args, int));
+                        i++;
+                }
+                else
+                {
+                        _putchar(format[i]);
+                }
 		
 	}
 	va_end(args);
