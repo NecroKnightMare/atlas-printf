@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
                 return (-1); /* return error */
         }
 
-        const char *iterator = format; /* set iterator to format string */
+        *iterator = format; /* set iterator to format string */
 
         while (*iterator!= '\0') /* loop through format string */
         {
@@ -77,9 +77,9 @@ int _printf(const char *format, ...)
 
                                 str_num[index] = '\0'; /* add null terminator */
 
-                                for (; *str_num; *str_num++) /* loop through string */
+                                for (int i = 0; str_num[i]; i++) /* loop through string */
                                 {
-                                        _putchar(*str_num); /* print character */
+                                        _putchar(str_num[i]); /* print character */
                                         count++; /* increment character counter */
                                 }
 
