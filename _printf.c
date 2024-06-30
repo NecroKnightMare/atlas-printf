@@ -16,15 +16,15 @@ int _printf(const char *format, ...)
 {
         va_list args; /* holds variable args*/
         va_start(args, format); /* initialize va_list */
+        char *iterator = format; /* pointer to format string */
         int count = 0; /* printed character counter */
 
-        if (!=format) /* check for null format string */
+        if (format == NULL) /* check for null format string */
         {
                 return (-1); /* return error */
         }
 
         *iterator = format; /* set iterator to format string */
-        char *iterator; /* pointer to format string */
 
         while (*iterator!= '\0') /* loop through format string */
         {
