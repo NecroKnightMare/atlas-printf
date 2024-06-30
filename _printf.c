@@ -46,12 +46,12 @@ int _printf(const char *format, ...)
                 }
                 else if (format[i + 1] == 'd')
                 {
-                        count += _puts(va_arg(args, int));
+                        count += _putchar(va_arg(args, int));
                         i++;
                 }
                 else if (format[i + 1] == 'i')
                 {
-                        count += _puts(va_arg(args, int));
+                        count += _putchar(va_arg(args, int));
                         i++;
                 }
                 else
