@@ -12,23 +12,26 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned char iterator;
-	*format = iterator;
+	unsigned char iterator;/**used this by itself and it worked**/
+	/**format = iterator;don't know what to do with this, still compiling error- line 32*/
 	unsigned int count = 0;/* printed character counter */
-	int d, j, dig_index, tmp, k, divide, number;
+	int d, j, dig_index, tmp, k, divide, number;/**declared everything here to avoid comp errors*/
 
 	va_list args;/* holds variable args*/
 	va_start(args, format);/* initialize va_list */
 
-	/* pointer to format string */
 
-	if (!format[i])/* check for null format string */
+
+	if (!format[i])/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
 {
-		_putchar("Error\n", format);
+		_putchar("Error\n", format);/**will need to have _puts to print string*/
 		return (-1);/* return error */
 }
 
-	while (format[i] != '\0')/* loop through format string */
+	while (format[i] != '\0')/* loop through format string- replace with iterator if needed and following */
+	iterator = (unsigned char *)format;/* cast format string to unsigned char */
+
+	while (*iterator != '\0')/* loop through format string */
 {
 		iterator++;
 		if (format[i] == '%')/* check for format specifier */
@@ -46,14 +49,14 @@ int _printf(const char *format, ...)
 				char *s = va_arg(args, char*); /* get string */
 				while (*s != '\0') /* loop through string */
 {
-					_putchar(*s); /* print character */
+					_putchar(*s); /* print character N - This is the string so _puts? -A*/
 					count++; /* increment character counter */
 }
 }
 			else if (format[i] == 'd') /* check for integer */
 {
 				d = va_arg(args, int); /* get integer */
-				dig_index = 0; /* index of string -- number of int*/
+				dig_index = 0; /* index of string -- number of int -A*/
 				tmp = d; /* loop counter */
 				k = dig_index;
 
