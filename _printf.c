@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
         char *iterator = format; /* pointer to format string */
         int count = 0; /* printed character counter */
 
-        if (format == NULL) /* check for null format string */
+        if (!format) /* check for null format string */
         {
                 return (-1); /* return error */
         }
@@ -76,8 +76,8 @@ int _printf(const char *format, ...)
                                 }
 
                                 str_num[index] = '\0'; /* add null terminator */
-
-                                for (int i = 0; str_num[i]; i++) /* loop through string */
+                                int i;
+                                for (i = 0; str_num[i]; i++) /* loop through string */
                                 {
                                         _putchar(str_num[i]); /* print character */
                                         count++; /* increment character counter */
