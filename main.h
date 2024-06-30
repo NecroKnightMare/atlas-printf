@@ -1,5 +1,6 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef MAIN_H
+#define MAIN_H
+#define WRITE
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -9,10 +10,9 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 
-typedef struct format
-{
-        (char *spec),
-        (int (*spec)va_list)
+typedef struct {
+        const char spec;
+        int (*format)(va_list);
 }spec;
 
 int (*get_spec(const char *spec))(va_list);
