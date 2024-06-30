@@ -27,7 +27,6 @@ int _printf(const char *format, ...)
 		return (-1);/* return error */
 }
 
-	while (format[i] != '\0')/* loop through format string- replace with iterator if needed and following */
 	iterator = (unsigned char *)format;/* cast format string to unsigned char */
 
 	while (*iterator != '\0')/* loop through format string */
