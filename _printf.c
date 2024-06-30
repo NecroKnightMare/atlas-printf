@@ -11,35 +11,35 @@
  *
  * Return: number of characters printed
  */
-
 int _printf(const char *format, ...) 
 {
-        va_list args; /* holds variable args*/
+        char iterator;
+	int count = 0;/* printed character counter */
+	
+	va_list args; /* holds variable args*/
         va_start(args, format); /* initialize va_list */
-        *iterator = format; /* pointer to format string */
-        int count = 0; /* printed character counter */
+
+	iterator = *format; /* pointer to format string */
 
         if (!format) /* check for null format string */
         {
                 return (-1); /* return error */
         }
 
-        while (*iterator!= '\0') /* loop through format string */
+        while (iterator != '\0') /* loop through format string */
         {
-                if (*iterator == '%') /* check for format specifier */
+                if (iterator == '%') /* check for format specifier */
                 {
                         iterator++; /* move to next character */
 
-                        if (*iterator == 'c') /* check for character */
+                        if (iterator == 'c') /* check for character */
                         {
                                 char c = (char)va_arg(args, int); /* get character */
-                                {
-                                        _putchar(c); /* print character */
-                                        count++; /* increment character counter */
-                                }
+                                 _putchar(c); /* print character */
+                                 count++; /* increment character counter */
                         }
                         
-                        else if (*iterator == 's') /* check for string */
+                        else if (iterator == 's') /* check for string */
                         {
                                 char *s = va_arg(args, char*); /* get string */
 
@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
                                 }
                         }
 
-                        else if (*iterator == 'd' || *iterator == 'i') /* check for integer */
+                        else if (iterator == 'd' || iterator == 'i') /* check for integer */
                         {
                                 int num = va_arg(args, int); /* get integer */
                                 char str_num[50]; /* string to hold integer */
@@ -87,14 +87,14 @@ int _printf(const char *format, ...)
                         else 
                         {
                                 _putchar('%'); /* print % */
-                                _putchar(*iterator); /* print character */
+                                _putchar(iterator); /* print character */
                                 count += 2; /* increment character counter */
                         }
                 } 
 
         else /* if not format specifier */
         {
-                _putchar(*iterator); /* just print it */
+                _putchar(iterator); /* just print it */
                 count++; /* increment character counter */
         }
 
