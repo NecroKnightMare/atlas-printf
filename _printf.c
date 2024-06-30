@@ -14,88 +14,94 @@
 
 int _printf(const char *format, ...) 
 {
-    va_list args; /* holds variable args*/
-    va_start(args, format); /* initialize va_list */
+        va_list args; /* holds variable args*/
+        va_start(args, format); /* initialize va_list */
+        const char *iterator; /* pointer to format string */
+        int count = 0; /* printed character counter */
 
-    const char *iterator = format; /* pointer to format string */
-    int count = 0; /* printed character counter */
-
-    while (*iterator!= '\0') /* loop through format string */
-    {
-        if (*iterator == '%') /* check for format specifier */
+        if (format == NULL) /* check for null format string */
         {
-            iterator++; /* move to next character */
+                return (-1); /* return error */
+        }
 
-            if (*iterator == 'c') /* check for character */
-            {
-                char c = (char)va_arg(args, int); /* get character */
+        const char *iterator = format; /* set iterator to format string */
+
+        while (*iterator!= '\0') /* loop through format string */
+        {
+                if (*iterator == '%') /* check for format specifier */
                 {
-                        _putchar(c); /* print character */
-                        count++; /* increment character counter */
-                }
-            } 
-            
-            else if (*iterator == 's') /* check for string */
-            {
-                char *s = va_arg(args, char*); /* get string */
-                while (*s) /* loop through string */
-                {
-                    _putchar(*s++); /* print character */
-                    count++; /* increment character counter */
-                }
-            } 
-            
-            else if (*iterator == 'd' || *iterator == 'i') /* check for integer */
-            {
-                int num = va_arg(args, int); /* get integer */
-                char str_num[50]; /* string to hold integer */
-                int index = 0; /* index of string */
+                        iterator++; /* move to next character */
 
-                if (num < 0) /* check for negative number */
-                {
-                    str_num[index++] = '-'; /* add negative sign */
-                    num = -num; /* make number positive */
-                }
+                        if (*iterator == 'c') /* check for character */
+                        {
+                                char c = (char)va_arg(args, int); /* get character */
+                                {
+                                        _putchar(c); /* print character */
+                                        count++; /* increment character counter */
+                                }
+                        }
+                        
+                        else if (*iterator == 's') /* check for string */
+                        {
+                                char *s = va_arg(args, char*); /* get string */
 
-                while (num > 0) /* loop through number */
-                {
-                    str_num[index++] = '0' + (num % 10); /* add digit to string */
-                    num /= 10; /* move to next digit */
-                }
+                                while (*s) /* loop through string */
+                                {
+                                        _putchar(*s++); /* print character */
+                                        count++; /* increment character counter */
+                                }
+                        }
 
-                if (index == 0) /* check for zero */
-                {
-                    str_num[index++] = '0'; /* add zero to string */
-                }
+                        else if (*iterator == 'd' || *iterator == 'i') /* check for integer */
+                        {
+                                int num = va_arg(args, int); /* get integer */
+                                char str_num[50]; /* string to hold integer */
+                                int index = 0; /* index of string */
 
-                str_num[index] = '\0'; /* add null terminator */
+                                if (num < 0) /* check for negative number */
+                                {
+                                        str_num[index++] = '-'; /* add negative sign */
+                                        num = -num; /* make number positive */
+                                }
 
-                for (; *str_num; *str_num++) /* loop through string */
-                {
-                    _putchar(*str_num); /* print character */
-                    count++; /* increment character counter */
-                }
+                                while (num > 0) /* loop through number */
+                                {
+                                        str_num[index++] = '0' + (num % 10); /* add digit to string */
+                                        num /= 10; /* move to next digit */
+                                }
 
-            } 
-            
-            else 
-            {
-                _putchar('%'); /* print % */
-                _putchar(*iterator); /* print character */
-                count += 2; /* increment character counter */
-            }
+                                if (index == 0) /* check for zero */
+                                {
+                                        str_num[index++] = '0'; /* add zero to string */
+                                }
 
-        } 
-        
+                                str_num[index] = '\0'; /* add null terminator */
+
+                                for (; *str_num; *str_num++) /* loop through string */
+                                {
+                                        _putchar(*str_num); /* print character */
+                                        count++; /* increment character counter */
+                                }
+
+                        }
+
+                        else 
+                        {
+                                _putchar('%'); /* print % */
+                                _putchar(*iterator); /* print character */
+                                count += 2; /* increment character counter */
+                        }
+                } 
+
         else /* if not format specifier */
         {
-            _putchar(*iterator); /* just print it */
-            count++; /* increment character counter */
+                _putchar(*iterator); /* just print it */
+                count++; /* increment character counter */
         }
 
         iterator++; /* move to next character */
-    }
+        }
 
-    va_end(args); /* clean up list */
-    return (count); /* return count */
+        va_end(args); /* clean up list */
+        return (count); /* return count */
 }
