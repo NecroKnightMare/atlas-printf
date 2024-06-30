@@ -17,12 +17,9 @@ int _printf(const char *format, ...)
 	unsigned int count = 0;/* printed character counter */
 	int d, j, dig_index, tmp, k, divide, number;/**declared everything here to avoid comp errors*/
 
-	iterator = (unsigned char *)format;/* cast format string to unsigned char */
 
 	va_list args;/* holds variable args*/
 	va_start(args, format);/* initialize va_list */
-
-
 
 	if (!format[i])/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
 {
@@ -31,6 +28,7 @@ int _printf(const char *format, ...)
 }
 
 	while (format[i] != '\0')/* loop through format string- replace with iterator if needed and following */
+	iterator = (unsigned char *)format;/* cast format string to unsigned char */
 
 	while (*iterator != '\0')/* loop through format string */
 {
