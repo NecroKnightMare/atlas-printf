@@ -18,12 +18,14 @@ int _printf(const char *format, ...)
 	va_list args;/* holds variable args*/
 	va_start(args, format);/* initialize va_list */
 
-	/* pointer to format string */
+
 
 	if (!format)/* check for null format string */
 {
 		return (-1);/* return error */
 }
+
+	iterator = (unsigned char *)format;/* cast format string to unsigned char */
 
 	while (*iterator != '\0')/* loop through format string */
 {
