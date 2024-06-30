@@ -12,13 +12,13 @@
  */
 int _printf(const char *format, ...)
 {
-	char *iterator;
-	int count = 0;/* printed character counter */
+	unsigned char *iterator;
+	unsigned int count = 0;/* printed character counter */
 
 	va_list args;/* holds variable args*/
 	va_start(args, format);/* initialize va_list */
 
-	iterator = format;/* pointer to format string */
+	/* pointer to format string */
 
 	if (!format)/* check for null format string */
 {

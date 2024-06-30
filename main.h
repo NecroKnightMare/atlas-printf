@@ -11,8 +11,8 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 
 typedef struct {
-        const char spec;
-        int (*format)(va_list);
+        unsigned char spec;
+        unsigned int (*format)(va_list, unsigned char, unsigned int, int);
 }spec;
 
 int (*get_spec(const char *spec))(va_list);
