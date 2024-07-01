@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	va_list args;/* holds variable args*/
 	va_start(args, format);/* initialize va_list */
 
-	if (!format[i])/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
+	if (!format[iterator])/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
 {
 		_putchar("Error\n", format);/**will need to have _puts to print string*/
 		return (-1);/* return error */
