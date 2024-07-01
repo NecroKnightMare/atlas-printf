@@ -9,18 +9,13 @@ _printf, _putchar, _print_c, _print_s, _print_per, _print_d, _print_i and a type
 
 Features
 
-Limited files to use _printf. Condensed all functions in one main prototype file.
+Limited files to use _printf. Condensed all functions into one main prototype file.
 
 Motivation
 
 	This function was created to utilize our knowledge to create a print function and understand how it works and how it is completed.  This is a project created by two students.
-	
-	
-Build Status
-
-	It is contiguous
-	
- Code Language
+		
+Code Language
 
 	Language C for the functions and ROFF for the man page.
 	
