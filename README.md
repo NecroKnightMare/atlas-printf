@@ -39,7 +39,7 @@ Works in Windows 11 Ubuntu 22.04, MAC, and Linux.
 Compile it using gcc std=gnu89
 Make sure the latest Windows, Mac, Linux is installed in your operating system. This code was compiled with gcc, so install this if you do not have it already installed. If using Windows 11
 
--On your command line write gcc and hit enter., if -
+-On your command line write gcc and hit enter, if -
 
 "gcc: fatal error: no input files
 compilation terminated." 
@@ -58,19 +58,19 @@ If using Linux:
 
 -Open a terminal and type either:
 
-which g++
-which cc
-which gcc
+	which g++
+	which cc
+	which gcc
 
 And the outputs if installed will appear as 
 
-g++ is /usr/bin/g++
-cc is /usr/bin/cc
-/usr/bin/gcc
+	g++ is /usr/bin/g++
+	cc is /usr/bin/cc
+	/usr/bin/gcc
 
 If not, install it by opening Ubuntu 20.04 and input 
 
-Sudo apt-get install gcc
+	Sudo apt-get install gcc
 
 If using Mac (macOS 10.nn-XCode)
 
@@ -78,13 +78,13 @@ Install homebrew and compile gcc (an hours worth)
 
 After homebrew is installed go in bash shell -
 
-Export HOMEBREW_NO_ANALYTICS=1
+	Export HOMEBREW_NO_ANALYTICS=1
 
-brew update
-brew upgrade
-brew info gcc
-brew install gcc
-brew cleanup
+	brew update
+	brew upgrade
+	brew info gcc
+	brew install gcc
+	brew cleanup
 
 
 ## Tests
@@ -95,7 +95,7 @@ All tests done in Visual Studios. Compiled differently in VS and had to recompos
 
 Use this _printf by inputting the prototype in your header and call it by using recursion in your main file. 
 
-int _printf(const char *format, ...);
+	int _printf(const char *format, ...);
 
 This file also uses _putchar which will also be needed to complete the function.
 
