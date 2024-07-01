@@ -22,15 +22,14 @@ int _printf(const char *format, ...)
 	va_list args;/* holds variable args*/
 	va_start(args, format);/* initialize va_list */
 
-	if (!format[iterator])/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
+	if (!format)/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
 {
-		_puts("Error\n", format);/**will need to have _puts to print string*/
+		_puts("Error\n");/**will need to have _puts to print string*/
 		return (-1);/* return error */
 }
 
-	while (format == NULL)/* loop through format string */
+	while (format[iterator])/* loop through format string */
 {
-		iterator++;
 		if (format[iterator] == '%')/* check for format specifier */
 {
 			iterator++;/* move to next character */
@@ -39,14 +38,15 @@ int _printf(const char *format, ...)
 {
 			char c = (char)va_arg(args, int);/* get character */
 			_putchar(c);/* print character */
-			/* increment character counter */
+			count++;/* increment character counter */
 }
 			else if (format[iterator] == 's')/* check for string */
 {
 				char *s = va_arg(args, char*); /* get string */
 				while (*s != '\0') /* loop through string */
 {
-					_puts(*s); /* print character N - This is the string so _puts? -A*/
+					_puts(s); /* print character N - This is the string so _puts? -A*/
+					s++; /* move to next character */
 					count++; /* increment character counter */
 }
 }
