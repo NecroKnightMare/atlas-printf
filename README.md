@@ -109,4 +109,4 @@ Atlas School (Holberton) has created this project for students to utilize to cre
 
 License
 
-MIT © Ariel Lopez, Nash Thams 
+MIT © Ariel Lopez, Nash Thaes 
