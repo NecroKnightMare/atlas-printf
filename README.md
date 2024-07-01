@@ -1,4 +1,4 @@
-##_print f- 
+## _print f- 
 
 The int _printf(const char *format, ...) function checks to see if the input is  % "modulus" or a NULL byte '\0'. If it is a NULL byte it will not proceed through the loop, if the input is % it will increment to the next input and check if it is a conversion specifier that is located in the array. Loop will go through each input following to see if it is a conversion specifier, specifically c, s, I, and d. The function will print by using _printf function, followed by a new line and return the number of characters in the given string.
 
