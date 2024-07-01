@@ -80,7 +80,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar('%'); /* print % */
+				_putchar('%'); /* print % - shouldn't it be %% - Ariel*/
 				_putchar(format[iterator]); /* print character */
 				count += 2; /* increment character counter */
 			}

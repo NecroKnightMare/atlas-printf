@@ -12,6 +12,8 @@ int _puts(char *str);
 int unsigned_int(va_list args);
 void _print_d(va_list args);
 void _print_p(va_list args);
+void _print_c(va_list args);
+void _print_s(va_list args);
 
 typedef struct {
         unsigned char spec;
