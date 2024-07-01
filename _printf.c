@@ -13,32 +13,31 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned char iterator = 0;/**used this by itself and it worked**/
+	unsigned char iterator = 0; /**used this by itself and it worked**/
 	/**format = iterator;don't know what to do with this, still compiling error- line 32*/
-	unsigned int count = 0;/* printed character counter */
-	int d, j, dig_index, tmp, k, divide, number;/**declared everything here to avoid comp errors*/
+	unsigned int count = 0; /* printed character counter */
+	int d, j, dig_index, tmp, k, divide, number; /**declared everything here to avoid comp errors*/
 
 
-	va_list args;/* holds variable args*/
-	va_start(args, format);/* initialize va_list */
+	va_list args; /* holds variable args*/
+	va_start(args, format); /* initialize va_list */
 
-	if (!format)/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
-{
-		_puts("Error\n");/**will need to have _puts to print string*/
-		return (-1);/* return error */
+	if (!format) /* check for NULL string */
+		_puts("Error\n");/* print error */
+		return (-1); /* return error */
 }
 
-	while (format[iterator])/* loop through format string */
+	while (format[iterator]) /* loop through format string */
 {
-		if (format[iterator] == '%')/* check for format specifier */
+		if (format[iterator] == '%') /* check for format specifier */
 {
-			iterator++;/* move to next character */
+			iterator++; /* move to next character */
 
-		if (format[iterator] == 'c')/* check for character */
+		if (format[iterator] == 'c') /* check for character */
 {
-			char c = (char)va_arg(args, int);/* get character */
-			_putchar(c);/* print character */
-			count++;/* increment character counter */
+			char c = (char)va_arg(args, int); /* get character */
+			_putchar(c); /* print character */
+			count++; /* increment character counter */
 }
 			else if (format[iterator] == 's')/* check for string */
 {
@@ -60,23 +59,23 @@ int _printf(const char *format, ...)
 
 				do
 {
-					dig_index++;
-					tmp /= 10;
+					dig_index++; /* increment index */
+					tmp /= 10; /* divide by 10 */
 }
 					while (tmp > 0);
 
 				while (k >= 0) /* looping to count int*/
 {
-					k--;
-					divide = 1;
+					k--; /* decrement index */
+					divide = 1; /* divide by 1 */
 
-					while (k < j)
+					while (k < j) /* loop to get digit */
 {
-						divide *= 10;
-						j++;
+						divide *= 10; /* multiply by 10 */
+						j++; /* increment index */
 }
-					number = (d / divide) % 10;
-					_putchar('0' + number);
+					number = (d / divide) % 10; /* get digit */
+					_putchar('0' + number); /* print digit */
 }
 }
 			else 
