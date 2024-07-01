@@ -12,10 +12,9 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned char iterator = 0; /**used this by itself and it worked**/
-	/**format = iterator;don't know what to do with this, still compiling error- line 32*/
+	unsigned char iterator = 0; /* iterator for format string */
 	unsigned int count = 0; /* printed character counter */
-	int d, j, dig_index, tmp, k, divide, number; /**declared everything here to avoid comp errors*/
+	int d, j, dig_index, tmp, k, divide, number; /* integer variables */
 
 
 	va_list args; /* holds variable args*/
@@ -61,7 +60,7 @@ int _printf(const char *format, ...)
 					dig_index++; /* increment index */
 					tmp /= 10; /* divide by 10 */
 }
-					while (tmp > 0);
+					while (tmp > 0); /* loop to count int */
 
 				while (k >= 0) /* looping to count int*/
 {
