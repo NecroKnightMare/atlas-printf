@@ -43,8 +43,8 @@ Make sure the latest Windows, Mac, Linux is installed in your operating system. 
 1. + If using Windows 11
 On your command line write gcc and hit enter, if -
 
-	"gcc: fatal error: no input files
-compilation terminated." 
+	gcc: fatal error: no input files
+compilation terminated. 
 
 -appears it is installed. 
 
