@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 
 	iterator = (unsigned char *)format;/* cast format string to unsigned char */
 
-	while (*iterator != '\0')/* loop through format string */
+	while (format[i] != '\0')/* loop through format string */
 {
 		iterator++;
 		if (format[i] == '%')/* check for format specifier */
