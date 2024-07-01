@@ -2,9 +2,9 @@
 
 The int _printf(const char *format, ...) function checks to see if the input is  % "modulus" or a NULL byte '\0'. If it is a NULL byte it will not proceed through the loop, if the input is % it will increment to the next input and check if it is a conversion specifier that is located in the array. Loop will go through each input following to see if it is a conversion specifier, specifically c, s, I, and d. The function will print by using _printf function, followed by a new line and return the number of characters in the given string.
 
-	Initializes with a declaration of an array that includes our conversion specifiers and %.
+Initializes with a declaration of an array that includes our conversion specifiers and %.
 
-	Our header contains the standard arguments library to call variadic functions. Standard input and output library for stdout function, NULL,  ;standard library for (atoi, free and malloc) along with our main header library that calls  
+Our header contains the standard arguments library to call variadic functions. Standard input and output library for stdout function, NULL,  ;standard library for (atoi, free and malloc) along with our main header library that calls  
 _printf, _putchar, _puts, and a typedef struct called spec. 
 
 ## Features
@@ -13,15 +13,15 @@ Limited files to use _printf. Condensed all functions into one main prototype fi
 
 ## Motivation
 
-	This function was created to utilize our knowledge to create a print function and understand how it works and how it is completed.  This is a project created by two students.
+This function was created to utilize our knowledge to create a print function and understand how it works and how it is completed.  This is a project created by two students.
 		
 ## Code Language
 
-	Language C for the functions and ROFF for the man page.
+Language C for the functions and ROFF for the man page.
 	
 ## Framework
 
-	Works in Windows 11 Ubuntu 22.04, MAC, and Linux.
+Works in Windows 11 Ubuntu 22.04, MAC, and Linux.
 	
 
 ## Code Example
