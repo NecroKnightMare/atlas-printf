@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 					count++; /* increment character counter */
 }
 }
-			else if (format[iterator] == 'd') /* check for integer */
+			else if (format[iterator] == 'd' || format[iterator] == 'i') /* check for integer */
 {
 				d = va_arg(args, int); /* get integer */
 				dig_index = 0; /* index of string -- number of int -A*/
@@ -76,7 +76,7 @@ int _printf(const char *format, ...)
 					_putchar('0' + number); /* print digit */
 }
 }
-			else 
+			else
 {
 				_putchar('%'); /* print % */
 				_putchar(format[iterator]); /* print character */
