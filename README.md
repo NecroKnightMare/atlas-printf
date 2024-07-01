@@ -7,24 +7,24 @@ The int _printf(const char *format, ...) function checks to see if the input is 
 	Our header contains the standard arguments library to call variadic functions. Standard input and output library for stdout function, NULL,  ;standard library for (atoi, free and malloc) along with our main header library that calls  
 _printf, _putchar, _puts, and a typedef struct called spec. 
 
-Features
+## Features
 
 Limited files to use _printf. Condensed all functions into one main prototype file.
 
-Motivation
+## Motivation
 
 	This function was created to utilize our knowledge to create a print function and understand how it works and how it is completed.  This is a project created by two students.
 		
-Code Language
+## Code Language
 
 	Language C for the functions and ROFF for the man page.
 	
-Framework
+## Framework
 
 	Works in Windows 11 Ubuntu 22.04, MAC, and Linux.
 	
 
-Code Example
+## Code Example
 
  int _printf(const char *format, ...)
 
@@ -34,7 +34,7 @@ Code Example
                 {
                         iterator++; /* move to next character *
 
-Installation
+## Installation
 
 Compile it using gcc std=gnu89
 Make sure the latest Windows, Mac, Linux is installed in your operating system. This code was compiled with gcc, so install this if you do not have it already installed. If using Windows 11
@@ -87,10 +87,11 @@ brew install gcc
 brew cleanup
 
 
-Tests
+## Tests
+
 All tests done in Visual Studios. Compiled differently in VS and had to recompose code to compile with std=gnu89.
 
-How To Use
+## How To Use
 
 Use this _printf by inputting the prototype in your header and call it by using recursion in your main file. 
 
@@ -98,15 +99,15 @@ int _printf(const char *format, ...);
 
 This file also uses _putchar which will also be needed to complete the function.
 
-Contribute
+## Contribute
 
 @NecroKnightMare atlas-printf
 @Internashionalist atlas-printf
 
-Credits
+## Credits
 
 Atlas School (Holberton) has created this project for students to utilize to create unique code. This one is done by Ariel Lopez and Nash Thames. 
 
-License
+## License
 
 MIT © Ariel Lopez, Nash Thames 
