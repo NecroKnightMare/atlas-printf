@@ -9,7 +9,7 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
-void _print_i(va_list args);
+int unsigned_int(va_list args);
 void _print_d(va_list args);
 void _print_p(va_list args);
 
