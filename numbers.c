@@ -1,6 +1,6 @@
 #include "main.h"
 
-int unsigned_int(va_list args)
+/**int unsigned_int(va_list args)
 {
 	unsigned int num;
 
@@ -15,3 +15,4 @@ int unsigned_int(va_list args)
 		return (-1);
 }
 }
+**/
