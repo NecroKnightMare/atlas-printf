@@ -56,6 +56,7 @@ int _printf(const char *format, ...)
 				dig_index = 0; /* index of string -- number of int -A*/
 				tmp = d; /* loop counter */
 				k = dig_index;
+				j = 0;
 
 				do
 {
