@@ -39,15 +39,15 @@ int _printf(const char *format, ...)
 			_putchar(c); /* print character */
 			count++; /* increment character counter */
 		}
-			else if (format[iterator] == 's')/* check for string */
+			else if (format[iterator] == 's')
 			{
-				char *s = va_arg(args, char*); /* get string */
-				while (*s != '\0') /* loop through string */
+				char *s = va_arg(args, char*);
+				while (*s)
 				{
-					_puts(s); /* print character N - This is the string so _puts? -A*/
-					s++; /* move to next character */
-					count++; /* increment character counter */
+					_putchar(*s);
+					s++;
 				}
+				count += strlen(s);
 			}
 			else if (format[iterator] == 'd' || format[iterator] == 'i') /* check for integer */
 			{
