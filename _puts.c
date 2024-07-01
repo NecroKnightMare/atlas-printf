@@ -6,7 +6,7 @@
  *
  * Return: number of byte
  */
- 
+
 int _puts(char *str)
 {
 	int count = 0; /* count the number of bytes */
