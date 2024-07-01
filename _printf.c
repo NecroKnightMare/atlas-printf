@@ -12,7 +12,7 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned char iterator;/**used this by itself and it worked**/
+	unsigned char iterator = 0;/**used this by itself and it worked**/
 	/**format = iterator;don't know what to do with this, still compiling error- line 32*/
 	unsigned int count = 0;/* printed character counter */
 	int d, j, dig_index, tmp, k, divide, number;/**declared everything here to avoid comp errors*/
@@ -27,10 +27,7 @@ int _printf(const char *format, ...)
 		return (-1);/* return error */
 }
 
-	iterator = (unsigned char *)format;/* cast format string to unsigned char */
-	iterator = 0;/* initialize iterator */
-
-	while (format != '\0')/* loop through format string */
+	while (format == NULL)/* loop through format string */
 {
 		iterator++;
 		if (format[iterator] == '%')/* check for format specifier */
