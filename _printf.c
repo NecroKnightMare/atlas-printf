@@ -1,4 +1,5 @@
 #include "main.h"
+#include "_puts.c"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -45,7 +46,7 @@ int _printf(const char *format, ...)
 				char *s = va_arg(args, char*); /* get string */
 				while (*s != '\0') /* loop through string */
 {
-					_putchar(*s); /* print character N - This is the string so _puts? -A*/
+					_puts(*s); /* print character N - This is the string so _puts? -A*/
 					count++; /* increment character counter */
 }
 }
