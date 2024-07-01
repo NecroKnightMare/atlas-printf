@@ -5,7 +5,7 @@ The int _printf(const char *format, ...) function checks to see if the input is 
 	Initializes with a declaration of an array that includes our conversion specifiers and %.
 
 	Our header contains the standard arguments library to call variadic functions. Standard input and output library for stdout function, NULL,  ;standard library for (atoi, free and malloc) along with our main header library that calls  
-_printf, _putchar, _print_c, _print_s, _print_per, _print_d, _print_i and a typedef struct called spec. 
+_printf, _putchar, _puts, and a typedef struct called spec. 
 
 Features
 
@@ -109,4 +109,4 @@ Atlas School (Holberton) has created this project for students to utilize to cre
 
 License
 
-MIT © Ariel Lopez, Nash Thaes 
+MIT © Ariel Lopez, Nash Thames 
