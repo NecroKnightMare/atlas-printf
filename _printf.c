@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	va_list args;/* holds variable args*/
 	va_start(args, format);/* initialize va_list */
 
-	if (!format[i])/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
+	if (!format[iterator])/* check for null format string -- used the array of th pointer- don't know if using iterator vs this is whats causing no checks through intranet.*/
 {
 		_putchar("Error\n", format);/**will need to have _puts to print string*/
 		return (-1);/* return error */
@@ -33,17 +33,17 @@ int _printf(const char *format, ...)
 	while (format != '\0')/* loop through format string */
 {
 		iterator++;
-		if (format[i] == '%')/* check for format specifier */
+		if (format[iterator] == '%')/* check for format specifier */
 {
 			iterator++;/* move to next character */
 
-		if (format[i] == 'c')/* check for character */
+		if (format[iterator] == 'c')/* check for character */
 {
 			char c = (char)va_arg(args, int);/* get character */
 			_putchar(c);/* print character */
 			/* increment character counter */
 }
-			else if (format[i] == 's')/* check for string */
+			else if (format[iterator] == 's')/* check for string */
 {
 				char *s = va_arg(args, char*); /* get string */
 				while (*s != '\0') /* loop through string */
@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 					count++; /* increment character counter */
 }
 }
-			else if (format[i] == 'd') /* check for integer */
+			else if (format[iterator] == 'd') /* check for integer */
 {
 				d = va_arg(args, int); /* get integer */
 				dig_index = 0; /* index of string -- number of int -A*/
@@ -83,13 +83,13 @@ int _printf(const char *format, ...)
 			else 
 {
 				_putchar('%'); /* print % */
-				_putchar(format[i]); /* print character */
+				_putchar(format[iterator]); /* print character */
 				count += 2; /* increment character counter */
 }
 }
 		else /* if not format specifier */
 {
-		_putchar(format[i]); /* just print it */
+		_putchar(format[iterator]); /* just print it */
 		count++; /* increment character counter */
 }
 	iterator++; /* move to next character */
