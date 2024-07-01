@@ -37,16 +37,18 @@ Works in Windows 11 Ubuntu 22.04, MAC, and Linux.
 ## Installation
 
 Compile it using gcc std=gnu89
-Make sure the latest Windows, Mac, Linux is installed in your operating system. This code was compiled with gcc, so install this if you do not have it already installed. If using Windows 11
 
--On your command line write gcc and hit enter, if -
+Make sure the latest Windows, Mac, Linux is installed in your operating system. This code was compiled with gcc, so install this if you do not have it already installed.
+
+1. + If using Windows 11
+On your command line write gcc and hit enter, if -
 
 "gcc: fatal error: no input files
 compilation terminated." 
 
 -appears it is installed. 
 
-If not installed -
+* + If not installed -
 
 Download MinGW and run as administrator.
 Install and select-
@@ -54,25 +56,25 @@ Install and select-
 	mingw32-gcc-objc
 Apply changes.
 
-If using Linux:
+2. + If using Linux:
 
--Open a terminal and type either:
+* + Open a terminal and type either:
 
 	which g++
 	which cc
 	which gcc
 
-And the outputs if installed will appear as 
+* + And the outputs if installed will appear as 
 
 	g++ is /usr/bin/g++
 	cc is /usr/bin/cc
 	/usr/bin/gcc
 
-If not, install it by opening Ubuntu 20.04 and input 
+* + If not, install it by opening Ubuntu 20.04 and input 
 
 	Sudo apt-get install gcc
 
-If using Mac (macOS 10.nn-XCode)
+3. + If using Mac (macOS 10.nn-XCode)
 
 Install homebrew and compile gcc (an hours worth)
 
@@ -110,4 +112,4 @@ Atlas School (Holberton) has created this project for students to utilize to cre
 
 ## License
 
-MIT © Ariel Lopez, Nash Thames 
+MIT © Ariel Lope & Nash Thames 
