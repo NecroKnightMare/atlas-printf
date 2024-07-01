@@ -1,0 +1,64 @@
+.TH _PRINT 1 -_printf\-0.1
+.SH NAME
+_printf \-prints string and parses through string to print datatype char c, %, s; int d and ifollowed by a new line. Errors out and ends if NULL.
+
+.SH LIBRARY
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <unistd.h>
+#include "main.h"
+
+.SH SYNOPSIS
+.B _PRINTF
+.B _printf
+.RB [ \c
+.IR char ]
+.RB [ \%
+.IR modulus ]
+.RB [ \s
+.IR string ]
+.RB [ \d
+.IR decimal integer ]
+.RB [ \i
+.IR integer]
+.IP
+.BR _printf "prints conversion specifiers c, s, %, d, and i. If input is not of these conversion specifiers, will return error. If successfull will return the number of characters printed."
+
+.SH DESCRIPTION
+.B _printf
+takes a variable input and checks through iteration if the variable is of c, s, %, d, or i to print the conversion specifier. If input is equal to NULL or \0 it will result and return in an error followed by a new line. If successful the input will be printed along with a new line.
+.SH EXAMPLES
+
+.EX
+        while (*iterator != '\0')/* loop through format string */
+{
+                if (*iterator == '%')/* check for format specifier */
+{
+                        iterator++;/* move to next character */
+.EE
+.SH RETURN VALUE
+
+.IB number of characters in a string
+
+.SH BUGS
+
+.IB pointer was declared after variadic function- fixed by declaring first.
+.IB compiled in test with different gnu, compiled correctly with std=gnu89
+.IB loop through positive and negative int didn't output correctly, used unsigned declaration
+.IB
+
+.SH SEE ALSO
+
+.IB printf()
+.IB vprintf()
+.IB putchar()
+
+
+.SH AUTHORS
+
+.IB Nash Thames taylor.thames@atlasschool.com
+.IB Ariel Lopez alexandrea.lopez@atlasschool.com
+
+.SH COPYRIGHT
