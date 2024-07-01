@@ -33,12 +33,12 @@ int _printf(const char *format, ...)
 		{
 			iterator++; /* move to next character */
 
-		if (format[iterator] == 'c') /* check for character */
-		{
-			char c = (char)va_arg(args, int); /* get character */
-			_putchar(c); /* print character */
-			count++; /* increment character counter */
-		}
+			if (format[iterator] == 'c') /* check for character */
+			{
+				char c = (char)va_arg(args, int); /* get character */
+				_putchar(c); /* print character */
+				count++; /* increment character counter */
+			}
 			else if (format[iterator] == 's') /* check for string */
 			{
 				char *s = va_arg(args, char*); /* get string */
