@@ -9,12 +9,15 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
+void _print_i(va_list args);
+void _print_d(va_list args);
+void _print_p(va_list args);
 
 typedef struct {
         unsigned char spec;
-        unsigned int (*format)(va_list, unsigned char, unsigned int, int, int, int);
+        unsigned int (*format)(va_list);
 }spec;
 
-int (*get_spec(const char *spec))(va_list);
+int (*get_spec(const char format))(va_list args);
 
 #endif
