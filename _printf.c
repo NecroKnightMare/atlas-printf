@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	if (!format) /* check for NULL string */
 		_puts("Error\n");/* print error */
 		return (-1); /* return error */
-}
+
 
 	while (format[iterator]) /* loop through format string */
 {
