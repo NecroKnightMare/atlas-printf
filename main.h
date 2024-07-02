@@ -8,7 +8,9 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
-/**int unsigned_int(va_list args);
+int print_s(char *s);
+int print_num(int n);
+/**
 void _print_d(va_list args);
 void _print_p(va_list args);
 void _print_c(va_list args);
