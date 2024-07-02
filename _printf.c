@@ -20,7 +20,6 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		format++;
 		if (*format == '%') /*loop through format string */
 		{
 			format++;			 /* move to next character*/
