@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 			}
 			if (*format == 'c') /* check for character */
 			{
-				num = va_arg(args, int); /* get character */
 				_putchar(va_arg(args, int)); /**grab c from args and print */
 				count++;					 /* increment character counter */
 			}
