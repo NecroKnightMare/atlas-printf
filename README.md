@@ -24,11 +24,11 @@ Works in Windows 11 Ubuntu 22.04, MAC, and Linux.
 	
 	int _printf(const char *format, ...)
 	
-	while (iterator != '\0') /* loop through format string */
+	while (count != '\0') /* loop through format string */
 	 {
-	 if (iterator == '%') /* check for format specifier */
+	 if (count == '%') /* check for format specifier */
 	 {
-	 iterator++; /* move to next character *
+	 count++; /* move to next character *
 	
 ## Installation
 	

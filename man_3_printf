@@ -30,11 +30,11 @@
 .IB	takes a variable input and checks through iteration if the variable is of c, s, %, d, or i to print the conversion specifier. If input is equal to NULL or \0 it will result and return in an error followed by a new line. If successful the input will be printed along with a new line.
 .SH EXAMPLES
 .EX
-	 while (*iterator != '\0')/* loop through format string */
+	 while (*count != '\0')/* loop through format string */
 	{
-	 if (*iterator == '%')/* check for format specifier */
+	 if (*count == '%')/* check for format specifier */
 	{
-	 iterator++;/* move to next character */
+	 count++;/* move to next character */
 	}
 .SH RETURN VALUE
 .IB number of characters in a string
