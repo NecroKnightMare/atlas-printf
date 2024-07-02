@@ -13,48 +13,53 @@ int _printf(const char *format, ...)
 {
 	va_list args; /* holds variable args*/
        	int iterator = 0; /* iterator for format string */
-	
-        va_start(args, format); /* initialize va_list */
+	char *str;
+	int num;
  
-        if (!format) /* check for NULL string */
+        if (format == NULL) /* check for NULL string */
         {
-		format++;
+		return (-1);
+	
+	va_start(args, format);/* initialize va_list */
+
+		while (*format)
+		{
+			format++;
 			if (*format == '%') /*loop through format string */
 			{
 				format++;/* move to next character*/
-				while (*format)
-				{
-					format++;
-				}
-		/**if (*format =='%') * check for format specifier *
-                {
-                	_putchar(%);
-			format++; * move to next character *
-                }**/
+			if (*format =='\0') /* check for null byte and handle end of string */
+                	{
+                		va_end(args);
+				return (-1);
+			}
 			if (*format == 'c') /* check for character */
                 	{
-                		int c = va_arg(args, int); /* get character */
-                       		_putchar(c); /* print character */
+                		_putchar(va_arg(args, int)); /**grab c from args and print */
                         	iterator++; /* increment character counter */
                 	}
 				else if (*format == 's') /* check for string */
                 		{
-					char *s = va_arg(args, char*); /* get string */
-					while (*s) /* loop through string */
-                        		{
-                        			_putchar(*s); /* print character */
-                        		iterator++; /* increment character counter */
-					}
-				}	
-				else
-                		{
+					str = va_arg(args, char *);/* get string */
+					count += print_s(str);/* count through string */
+                        	}
+                       		else if (*format == '%')
+				{	
               				_putchar('%');
-					_putchar(*format); /* just print it */
+					iterator++;
 				}
+			else if (*format == 'd' || *format == 'i')
+			{
+				num = va_arg(args, int);
+				count += 2;
+			}
+			else
+			{	
+				_putchar(*format); /**print string**/
 				iterator++; /* increment character counter */
         			}
-				format++; /* move to next character */
-				}
+			format++; /* move to next character */
+			}
         va_end(args); /* clean up list */
         return (iterator); /* return count */
 }
