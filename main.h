@@ -1,8 +1,12 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int _putchar(char *c);
 int _puts(char *str);
 /**int unsigned_int(va_list args);
 void _print_d(va_list args);
