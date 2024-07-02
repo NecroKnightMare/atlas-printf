@@ -106,3 +106,4 @@ Atlas School (Holberton) has created this project for students to utilize to cre
 
 MIT © Ariel Lope & Nash Thames 
 
+[_printf-interview flowchart (1).pdf](https://github.com/user-attachments/files/16061678/_printf-interview.flowchart.1.pdf)
