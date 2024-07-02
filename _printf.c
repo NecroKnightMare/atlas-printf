@@ -17,7 +17,6 @@ int _printf(const char *format, ...)
 	int num;
  
         if (format == NULL) /* check for NULL string */
-        {
 		return (-1);
 	
 	va_start(args, format);/* initialize va_list */
@@ -41,7 +40,7 @@ int _printf(const char *format, ...)
 				else if (*format == 's') /* check for string */
                 		{
 					str = va_arg(args, char *);/* get string */
-					count += print_s(str);/* count through string */
+					iterator += print_s(str);/* count through string */
                         	}
                        		else if (*format == '%')
 				{	
@@ -51,7 +50,14 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{
 				num = va_arg(args, int);
-				count += 2;
+				iterator += print_num(num);
+			}
+			else
+			{
+				_putchar('%');
+				_putchar(*format);
+				iterator += 2;
+			}
 			}
 			else
 			{	
